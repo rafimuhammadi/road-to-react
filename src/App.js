@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-const todoLsit = [
+const todoList = [
   {
     id: 1,
     title: "My First Assignment in CODE THE Dream.",
@@ -24,7 +24,7 @@ function App() {
       <h1>My First Assigment on CODE THE DREAM</h1>
       {/** Render the items */}
       <ul>
-        {todoLsit.map((item) => {
+        {todoList.map((item) => {
           return <li key={item.id}>{item.title}</li>;
         })}
       </ul>
