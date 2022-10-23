@@ -7,8 +7,44 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 ul li {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.todoForm {
+  padding: 20px;
+}
+.input {
+  width: 20%;
+  height: 40px;
+  margin: 10px;
+}
+input {
+  outline: none !important;
+  border: 1px solid rgb(175, 187, 214);
+}
+input:focus {
+  outline: none !important;
+  border: 1px solid rgb(49, 83, 169);
+}
+label {
+  margin: 10px;
+  font-weight: bold;
+}
+button {
+  margin: 10px;
+  background-color: rgb(43, 151, 43);
+  width: 8%;
+  height: 35px;
+  color: white;
+  cursor: pointer;
+  border: 1px solid rgb(43, 151, 43);
+}
+button:hover {
+  box-shadow: 0 0 10px rgb(43, 151, 43);
+}
+.todoForm {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
