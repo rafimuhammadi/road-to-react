@@ -1,9 +1,10 @@
 import React from "react";
+import TodoListItem from "./TodoListItem";
 const TodoList = () => {
   const items = [
     {
       id: 1,
-      title: "My Second Assignment in CODE THE Dream.",
+      title: "My Third Assignment in CODE THE Dream.",
     },
     {
       id: 2,
@@ -12,22 +13,19 @@ const TodoList = () => {
     {
       id: 3,
       title:
-        "Finally I am created the todo list component and show it in to browser",
+        "Finally I am created the todo list component and send it using PROPS to TodoListItems component",
     },
     {
       id: 4,
       title: "LOVE YOU ALL CODE THE DREAM.",
     },
   ];
+  //const { items, data } = props;
   return (
-    <div>
-      <h1>My Second Assigment on CODE THE DREAM</h1>
-      <ul>
-        {items.map((item) => {
-          return <li key={item.id}>{item.title}</li>;
-        })}
-      </ul>
-    </div>
+    <TodoListItem
+      items={items}
+      data={"Abdul Rafi Working on the Props In React"}
+    />
   );
 };
 export default TodoList;
