@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TodoList from "./TodoList";
-
 const AddTodoForm = (props) => {
   const handleAddTodo = (event) => {
     event.preventDefault();
@@ -13,7 +12,7 @@ const AddTodoForm = (props) => {
       <div>
         <label htmlFor="TodoTitle">Todo Title</label>
         <input type="text" name="title" id="TodoTitle" />
-        <button type="submit">Search</button>
+        <button type="submit">Add</button>
       </div>
     </form>
   );

@@ -17,7 +17,13 @@ const TodoList = () => {
     },
   ];
   return (
-    <TodoListItem items={items} data={"I am Working on the Props In React"} />
+    <>
+      <ul>
+        {items.map((title, i) => {
+          return <TodoListItem todo={title} />;
+        })}
+      </ul>
+    </>
   );
 };
 export default TodoList;
