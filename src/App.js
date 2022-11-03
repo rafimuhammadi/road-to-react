@@ -3,7 +3,6 @@ import "./App.css";
 import TodoList from "./TodoList";
 import AddTodoForm from "./AddTodoForm";
 import { Fragment, useState } from "react";
-
 function App() {
   const [newTodo, setNewTodo] = useState();
   return (
