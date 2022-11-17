@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import TodoList from "./components/TodoList";
-import AddTodoForm from "./components/AddTodoForm";
+import TodoList from "./TodoList";
+import AddTodoForm from "./AddTodoForm";
 import { Fragment } from "react";
 
 function App() {
