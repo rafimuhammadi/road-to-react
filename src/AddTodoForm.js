@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import React, { useState } from "react";
 import TodoList from "./TodoList";
 
@@ -23,17 +22,6 @@ const AddTodoForm = (props) => {
           onChange={handleTitleChange}
           value={todoTitle}
         />
-=======
-import React from "react";
-
-const AddTodoForm = () => {
-  return (
-    <form name="AddTodoForm">
-      <h1>Welcome to our Todo Form</h1>
-      <div>
-        <label htmlFor="TodoTitle">Todo Title</label>
-        <input type="text" id="TodoTitle" />
->>>>>>> Stashed changes
         <button type="submit">Add</button>
       </div>
     </form>
