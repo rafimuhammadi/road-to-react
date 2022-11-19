@@ -11,7 +11,7 @@ const AddTodoForm = (props) => {
     event.preventDefault();
     props.onAddTodo(todoTitle);
     setTodoTitle("");
-  };
+
   return (
     <form name="AddTodoForm" onSubmit={handleAddTodo}>
       <div>
@@ -22,6 +22,7 @@ const AddTodoForm = (props) => {
           onChange={handleTitleChange}
           value={todoTitle}
         />
+
         <button type="submit">Add</button>
       </div>
     </form>
