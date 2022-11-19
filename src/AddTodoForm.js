@@ -1,17 +1,28 @@
 import React, { useState } from "react";
 import TodoList from "./TodoList";
+
 const AddTodoForm = (props) => {
+  const [todoTitle, setTodoTitle] = useState("");
+  const handleTitleChange = (event) => {
+    const newTodoTiele = event.target.value;
+    setTodoTitle(newTodoTiele);
+  };
   const handleAddTodo = (event) => {
     event.preventDefault();
-    const todoTitle = event.target.title.value;
     props.onAddTodo(todoTitle);
-    event.target.title.value = "";
-  };
+    setTodoTitle("");
+
   return (
     <form name="AddTodoForm" onSubmit={handleAddTodo}>
       <div>
         <label htmlFor="TodoTitle">Todo Title</label>
-        <input type="text" name="title" id="TodoTitle" />
+        <input
+          type="text"
+          id="todoTitle"
+          onChange={handleTitleChange}
+          value={todoTitle}
+        />
+
         <button type="submit">Add</button>
       </div>
     </form>
