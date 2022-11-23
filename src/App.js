@@ -2,13 +2,12 @@ import logo from "./logo.svg";
 import "./App.css";
 import TodoList from "./TodoList";
 import AddTodoForm from "./AddTodoForm";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 function App() {
-  const [newTodo, setNewTodo] = useState();
   return (
     <Fragment>
-      <AddTodoForm onAddTodo={setNewTodo} />
-      <p>{newTodo}</p>
+      <h1>Todo List.</h1>
+      <AddTodoForm />
       <TodoList />
     </Fragment>
   );
