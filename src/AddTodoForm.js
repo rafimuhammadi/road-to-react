@@ -1,34 +1,35 @@
 import React, { useState, useEffect } from "react";
-const AddTodoForm = (props) => {
-  const [title, setTitle] = useState("");
-  const titleChangeHandler = (event) => {
-    setTitle(event.target.value);
+const AddTodoForm = () => {
+  const [todoTitle, setTodoTitle] = useState("");
+  const handleTitleChange = (event) => {
+    setTodoTitle(event.target.value);
   };
-  const submitHandler = (event) => {
+  const handleAddTodo = (event) => {
     event.preventDefault();
-    if (title == null) {
+    if (todoTitle == null) {
       return;
     }
     const data = {
       id: Date.now(),
-      title: title,
+      title: todoTitle,
     };
     const existTitle = localStorage.getItem("savedTodoList");
     const previousTitle = existTitle ? JSON.parse(existTitle) : [];
-    const NewTitle = previousTitle.filter((it) => it !== title);
+    const NewTitle = previousTitle.filter((it) => it !== todoTitle);
     const AddTitle = JSON.stringify([...NewTitle, data]);
     localStorage.setItem("savedTodoList", AddTitle);
-    setTitle("");
+    setTodoTitle("");
   };
+
   return (
-    <form name="AddTodoForm" onSubmit={submitHandler}>
+    <form name="AddTodoForm" onSubmit={handleAddTodo}>
       <div>
         <label htmlFor="TodoTitle">Title:</label>
         <input
           type="text"
           name="title"
-          onChange={titleChangeHandler}
-          value={title}
+          onChange={handleTitleChange}
+          value={todoTitle}
         />
         <button type="submit">Add</button>
       </div>
