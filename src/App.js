@@ -5,7 +5,7 @@ import TodoList from "./components/TodoList";
 import { useState } from "react";
 import ImageLoading from "./components/ImageLoading";
 const App = () => {
-  const [Loading, setLoading] = useState(false);
+  const [Loading, setLoading] = useState(true);
   const [data, setdata] = useState([]);
   useEffect(() => {
     new Promise((resolve, reject) => {
