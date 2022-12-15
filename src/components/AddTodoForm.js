@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { useEffect } from "react";
 import Button from "./Button";
 import InputWithLabel from "./InputWithLabel";
 const AddTodoForm = (props) => {
@@ -13,7 +12,7 @@ const AddTodoForm = (props) => {
     const filtered = previusTitle.filter((it) => it !== title);
     const updateTitle = [...filtered, { id: Date.now(), name: title }];
     localStorage.setItem("savedTitle", JSON.stringify(updateTitle));
-    props.onSetData(JSON.parse(localStorage.getItem("savedTitle")));
+    props.onSetLoading(true);
     setTitle("");
   };
   return (
