@@ -1,8 +1,7 @@
 import "./App.css";
-import react, { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import AddTodoForm from "./components/AddTodoForm";
 import TodoList from "./components/TodoList";
-import { useState } from "react";
 import ImageLoading from "./components/ImageLoading";
 const App = () => {
   const [Loading, setLoading] = useState(true);
