@@ -3,12 +3,8 @@ import Button from "./Button";
 import InputWithLabel from "./InputWithLabel";
 const AddTodoForm = (props) => {
   const [title, setTitle] = useState("");
-  const [details, setDetails] = useState("");
   const onChangeValueTitle = (e) => {
     setTitle(e.target.value);
-  };
-  const onChangeValueDetails = (e) => {
-    setDetails(e.target.value);
   };
   const StoreTodoTitle = async () => {
     props.onSetLoader(true);
@@ -16,7 +12,6 @@ const AddTodoForm = (props) => {
       const dataToPost = {
         fields: {
           title: title,
-          details: details,
         },
       };
       const response = await fetch(
@@ -39,7 +34,6 @@ const AddTodoForm = (props) => {
       props.onSetData(result.records);
       props.onSetLoader(false);
       setTitle("");
-      setDetails("");
     } catch (error) {
       console.log(error.message);
       return null;
@@ -53,13 +47,6 @@ const AddTodoForm = (props) => {
         autoFocus={"autoFocus"}
         onChange={onChangeValueTitle}
         value={title}
-      />
-      <InputWithLabel
-        labelTitle={"Details"}
-        type={"text"}
-        autoFocus={""}
-        onChange={onChangeValueDetails}
-        value={details}
       />
       <Button title={"Create"} onClick={StoreTodoTitle} />
     </>
