@@ -2,22 +2,24 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import TodoListItem from "./TodoListItem";
-const TodoList = () => {
-  const [data, setdata] = useState([]);
-  const getData = () => {
-    setdata(JSON.parse(localStorage.getItem("savedTitle")));
-  };
-  const HandleRemove = (id) => {
-    let elements = data;
-    elements = elements.filter((element) => element.id !== id);
-    localStorage.setItem("savedTitle", JSON.stringify(elements));
-    getData();
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+const TodoList = ({ data }) => {
   return (
-    <ul>{data && <TodoListItem title={data} HandleRemove={HandleRemove} />}</ul>
+    <ul>
+      {
+        data &&
+          data.map((d) => {
+            return (
+              <TodoListItem
+                key={d.id}
+                title={d.fields.title}
+                details={d.fields.details}
+                id={d.id}
+              />
+            );
+          })
+        // <TodoListItem data={data} HandleRemove={HandleRemove} />
+      }
+    </ul>
   );
 };
 
