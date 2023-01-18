@@ -1,10 +1,11 @@
 import React from "react";
-const TodoListItem = ({ title }) => {
+const TodoListItem = ({ data, id, HandleRemove }) => {
   return (
     <>
       <li>
-        {title}
+        {data.fields.title}
         &nbsp;
+        <button onClick={() => HandleRemove(id)}>Remove</button>
       </li>
     </>
   );

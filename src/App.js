@@ -29,7 +29,32 @@ const App = () => {
   };
   useEffect(() => {
     getDataFromAPI();
-  }, [data, loader]);
+  }, [data]);
+
+  const HandleRemove = async (recordsID) => {
+    setLoader(true);
+    try {
+      const response = await fetch(
+        `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/todoListTable/${recordsID}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+          },
+          method: "DELETE",
+        }
+      );
+      if (!response.ok) {
+        const message = `Error Occuard Please Check it:
+                        ${response.status}`;
+        throw new Error(message);
+      }
+      setLoader(false);
+    } catch (error) {
+      console.log(error.message);
+      return null;
+    }
+  };
   return (
     <Fragment>
       <h3>This is my Assigment of 1.8</h3>
@@ -39,7 +64,7 @@ const App = () => {
           <img src={Loader} />
         </p>
       ) : (
-        <TodoList data={data} />
+        <TodoList data={data} HandleRemove={HandleRemove} />
       )}
     </Fragment>
   );
