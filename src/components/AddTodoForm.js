@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
-import { useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "./Button";
 import InputWithLabel from "./InputWithLabel";
-const AddTodoForm = (props) => {
+import style from "../css/AddTodo.module.css";
+const AddTodoForm = () => {
   const [title, setTitle] = useState("");
   const navigate = useNavigate();
   const onChangeValueTitle = (e) => {
@@ -33,8 +33,6 @@ const AddTodoForm = (props) => {
         throw new Error(message);
       }
       const result = await response.json();
-      // props.onSetData(result.records);
-      // props.onSetLoader(false);
       setTitle("");
       navigate("/");
     } catch (error) {
@@ -44,7 +42,7 @@ const AddTodoForm = (props) => {
   };
   return (
     <>
-      <>
+      <div className={style.todoDiv}>
         <InputWithLabel
           labelTitle={"Title"}
           type={"text"}
@@ -53,7 +51,7 @@ const AddTodoForm = (props) => {
           value={title}
         />
         <Button title={"Create"} onClick={StoreTodoTitle} />
-      </>
+      </div>
     </>
   );
 };

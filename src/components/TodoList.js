@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import TodoListItem from "./TodoListItem";
 import Loader from "../loader/loader.gif";
+import style from "../../src/css/AddTodo.module.css";
 const TodoList = () => {
   const [data, setdata] = useState([]);
   const [loader, setLoader] = useState(true);
@@ -58,7 +59,9 @@ const TodoList = () => {
   };
   return (
     <>
-      <Link to="add-item">Add New Item</Link>
+      <Link to="add-item" className={style.addButton}>
+        Add New Item
+      </Link>
       <ul>
         {loader ? (
           <img src={Loader} />

@@ -1,0 +1,40 @@
+.header {
+  background-color: #999;
+  text-align: center;
+  margin-top: -1.5% !important;
+  height: 40px;
+  font-size: 1.5rem;
+  color: whitesmoke;
+}
+
+ul {
+  display: block;
+  margin-left: 10px;
+}
+ul li {
+  display: block;
+  position: relative;
+  font-size: 1.2rem;
+}
+ul li:not(:last-child) {
+  margin-bottom: 16px;
+}
+ul li:before {
+  content: "";
+  position: absolute;
+  top: 1.2em;
+  left: -30px;
+  margin-top: -0.9em;
+  background-color: #920f0f;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+}
+.AddButton {
+  background-color: rgb(5, 159, 52);
+  border: 1px solid rgba(5, 159, 52);
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
