@@ -1,10 +1,63 @@
+.TodoForm {
+  width: 90%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.control {
+  margin: 1rem 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.control label,
+.control input {
+  display: block;
+}
+
+.control label {
+  font-weight: bold;
+  flex: 1;
+  color: #464646;
+  margin-bottom: 0.5rem;
+}
+
+.control input {
+  flex: 3;
+  font: inherit;
+  padding: 0.35rem 0.35rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.control input:focus {
+  outline: none;
+  border-color: #4f005f;
+  background: #f6dbfc;
+}
+
+.control.invalid input {
+  border-color: red;
+  background: #fbdada;
+}
+
+.actions {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .control {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
 .addButton {
   text-decoration: none;
   cursor: pointer;
-  padding-left: 2%;
-}
-.addButton:hover {
-  color: rgb(156, 21, 21);
+  color: white;
 }
 .removeButton {
   background-color: rgba(156, 21, 21);
@@ -14,23 +67,9 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.todoDiv {
-  padding-top: 10px;
-  margin-left: 15px;
-}
-.todoDiv input {
-  width: 15%;
-  height: 20px;
-}
-.todoDiv button {
-  background-color: rgb(0, 156, 21);
-  border: 1px solid rgba(0, 156, 21);
-  color: white;
-  font-size: 1rem;
-  border-radius: 2px;
-  cursor: pointer;
-  height: 27px;
-}
-.todoDiv label {
-  font-size: 1.5rem;
+.TodoList {
+  width: 90%;
+  max-width: 40rem;
+  padding: 3rem;
+  margin: 2rem auto;
 }

@@ -4,7 +4,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import TodoListItem from "./TodoListItem";
 import Loader from "../loader/loader.gif";
-import style from "../../src/css/AddTodo.module.css";
+import style from "../../src/css/TodoListItem.module.css";
+import Card from "./UI/Card";
+import Button from "./UI/Button/Button";
 const TodoList = () => {
   const [data, setdata] = useState([]);
   const [loader, setLoader] = useState(true);
@@ -59,28 +61,44 @@ const TodoList = () => {
   };
   return (
     <>
-      <Link to="add-item" className={style.addButton}>
-        Add New Item
-      </Link>
-      <ul>
+      <Card className={style.TodoList}>
+        <Button type="submit" className={style.btn}>
+          <Link to="add-item" className={style.addButton}>
+            Add New
+          </Link>
+        </Button>
+        <hr />
         {loader ? (
-          <img src={Loader} />
+          <div className={style.loader}>
+            <img src={Loader} />
+          </div>
         ) : (
-          data &&
-          data.map((d) => {
-            return (
-              <TodoListItem
-                key={d.id}
-                data={d}
-                id={d.id}
-                HandleRemove={HandleRemove}
-              />
-            );
-          })
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Operation</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data &&
+                data.map((d, i) => {
+                  return (
+                    <TodoListItem
+                      index={i}
+                      key={d.id}
+                      data={d}
+                      id={d.id}
+                      HandleRemove={HandleRemove}
+                    />
+                  );
+                })}
+            </tbody>
+          </table>
         )}
-
-        {}
-      </ul>
+      </Card>
     </>
   );
 };

@@ -1,16 +1,18 @@
 import React from "react";
 import style from "../css/AddTodo.module.css";
-const TodoListItem = ({ data, id, HandleRemove }) => {
+import Button from "./UI/Button/Button";
+const TodoListItem = ({ index, data, id, HandleRemove }) => {
   return (
-    <>
-      <li>
-        {data.fields.title}
-        &nbsp;
-        <button onClick={() => HandleRemove(id)} className={style.removeButton}>
-          Remove
-        </button>
-      </li>
-    </>
+    <tr key={index}>
+      <td>{index}</td>
+      <td> {data.fields.title}</td>
+      <td> {data.fields.description}</td>
+      <td>
+        <Button onClick={() => HandleRemove(id)} className={style.btn}>
+          X
+        </Button>
+      </td>
+    </tr>
   );
 };
 export default TodoListItem;
