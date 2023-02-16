@@ -7,6 +7,7 @@ import Loader from "../loader/loader.gif";
 import style from "../../src/css/TodoListItem.module.css";
 import Card from "./UI/Card";
 import Button from "./UI/Button/Button";
+import propType, { array, number, string } from "prop-types";
 const TodoList = () => {
   const [data, setdata] = useState([]);
   const [loader, setLoader] = useState(true);
@@ -102,5 +103,11 @@ const TodoList = () => {
     </>
   );
 };
-
+TodoList.prototype = {
+  index: propType.number,
+  key: propType.number,
+  data: array,
+  id: number,
+  HandleRemove: string,
+};
 export default TodoList;

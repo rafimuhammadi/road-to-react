@@ -1,6 +1,8 @@
 import React from "react";
 import style from "../css/AddTodo.module.css";
 import Button from "./UI/Button/Button";
+import propType from "prop-types";
+
 const TodoListItem = ({ index, data, id, HandleRemove }) => {
   return (
     <tr key={index}>
@@ -14,5 +16,11 @@ const TodoListItem = ({ index, data, id, HandleRemove }) => {
       </td>
     </tr>
   );
+};
+TodoListItem.propType = {
+  index: propType.number,
+  data: propType.array,
+  id: propType.number,
+  HandleRemove: propType.string,
 };
 export default TodoListItem;

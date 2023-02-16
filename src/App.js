@@ -6,11 +6,10 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import style from "./css/TodoListItem.module.css";
 const App = () => {
-  const [data, setdata] = useState([]);
   return (
     <Fragment>
       <div className={style.header}>
-        <h3>This is my Assigment of 3.1</h3>
+        <h3>This is my Assigment of 4.1</h3>
       </div>
       <BrowserRouter>
         <Routes>
